@@ -2,7 +2,9 @@
   "use strict";
 
   const GH_API = "https://api.github.com";
-  const VAULT_KEY = "dvv_admin_vault_v1";
+  const VAULT_PATH = "vault.json"; // relative fetch path (we're already inside /admin/)
+  const VAULT_REPO_PATH = "admin/vault.json"; // full path from the repo root, for GitHub API calls
+  const SESSION_KEY = "dvv_admin_session_v1";
 
   // ---------------- Base64 (UTF-8 safe) helpers ----------------
   function b64EncodeUtf8(str) {
@@ -56,17 +58,30 @@
 
   function getStoredVault() {
     try {
-      const raw = localStorage.getItem(VAULT_KEY);
+      const raw = sessionStorage.getItem(SESSION_KEY);
       return raw ? JSON.parse(raw) : null;
     } catch (e) {
       return null;
     }
   }
-  function storeVault(vault) {
-    localStorage.setItem(VAULT_KEY, JSON.stringify(vault));
+  function storeSession(sessionObj) {
+    try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(sessionObj)); } catch (e) {}
   }
-  function clearVault() {
-    localStorage.removeItem(VAULT_KEY);
+  function clearSession() {
+    sessionStorage.removeItem(SESSION_KEY);
+  }
+
+  // The encrypted vault lives IN THE REPO (admin/vault.json), not per-device.
+  // Any device that opens /admin/ fetches this same file, so every device only
+  // ever needs the passphrase — never the GitHub token — after the one-time setup.
+  async function fetchRepoVault() {
+    try {
+      const res = await fetch("vault.json", { cache: "no-store" });
+      if (!res.ok) return null;
+      return res.json();
+    } catch (e) {
+      return null;
+    }
   }
 
   // ---------------- GitHub API ----------------
@@ -168,14 +183,27 @@
   }
 
   // ---------------- Gate: setup / unlock ----------------
-  function initGate() {
-    const vault = getStoredVault();
-    if (vault) {
-      $("#setupForm").hidden = true;
+  let cachedVault = null; // the encrypted blob fetched from the repo (not the decrypted secrets)
+
+  async function initGate() {
+    // Session cache (this tab only) — skip straight in if we already unlocked earlier in this tab.
+    const cachedSession = getStoredVault();
+    if (cachedSession) {
+      session = cachedSession;
+      enterDashboard();
+      return;
+    }
+
+    $("#setupForm").hidden = true;
+    $("#unlockForm").hidden = true;
+    showStatus("Verificando configuración…", "loading");
+    cachedVault = await fetchRepoVault();
+    hideStatus();
+
+    if (cachedVault) {
       $("#unlockForm").hidden = false;
     } else {
       $("#setupForm").hidden = false;
-      $("#unlockForm").hidden = true;
     }
   }
 
@@ -200,28 +228,40 @@
     }
     errEl.hidden = true;
 
+    const btn = $("#setupSubmit");
+    const original = btn.textContent;
+    btn.textContent = "Guardando en GitHub…";
+    btn.disabled = true;
+
     try {
-      const vault = await encryptVault(pass, { owner, repo, branch, token });
-      storeVault(vault);
-      session = { owner, repo, branch, token };
+      const tempSession = { owner, repo, branch, token };
+      const vault = await encryptVault(pass, tempSession);
+      const existingSha = await ghGetShaIfExists(tempSession, VAULT_REPO_PATH);
+      await ghPutJSON(tempSession, VAULT_REPO_PATH, vault, existingSha, "Admin: configura acceso del panel");
+
+      session = tempSession;
+      storeSession(session);
       enterDashboard();
     } catch (e) {
       errEl.textContent = "Error guardando la configuración: " + e.message;
       errEl.hidden = false;
+    } finally {
+      btn.textContent = original;
+      btn.disabled = false;
     }
   });
 
   $("#unlockSubmit").addEventListener("click", async () => {
     const pass = $("#unlockPass").value;
     const errEl = $("#unlockError");
-    const vault = getStoredVault();
-    if (!vault) {
-      initGate();
+    if (!cachedVault) {
+      await initGate();
       return;
     }
     try {
-      const data = await decryptVault(pass, vault);
+      const data = await decryptVault(pass, cachedVault);
       session = data;
+      storeSession(session);
       errEl.hidden = true;
       enterDashboard();
     } catch (e) {
@@ -235,14 +275,15 @@
   });
 
   $("#resetVaultBtn").addEventListener("click", () => {
-    if (confirm("Esto borra la configuración guardada en este dispositivo (no borra nada de GitHub). ¿Seguro?")) {
-      clearVault();
-      initGate();
+    if (confirm("Esto te lleva a reconfigurar el panel (vas a necesitar el token de GitHub de nuevo). La clave anterior deja de servir. ¿Seguro?")) {
+      $("#unlockForm").hidden = true;
+      $("#setupForm").hidden = false;
     }
   });
 
   $("#lockBtn").addEventListener("click", () => {
     session = null;
+    clearSession();
     $("#dashScreen").hidden = true;
     $("#topbarActions").hidden = true;
     $("#gateScreen").hidden = false;
