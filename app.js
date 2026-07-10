@@ -145,6 +145,16 @@
     return "$" + n.toLocaleString("es-AR");
   }
 
+  function formatWaDisplay(num) {
+    let digits = String(num).replace(/\D/g, "");
+    if (digits.startsWith("549")) digits = digits.slice(3);
+    else if (digits.startsWith("54")) digits = digits.slice(2);
+    if (digits.length === 10) {
+      return `+54 9 ${digits.slice(0, 4)} ${digits.slice(4, 6)}-${digits.slice(6)}`;
+    }
+    return "+54 9 " + digits;
+  }
+
   // ---------- Catalog filtering/render ----------
   function matches(product) {
     const tagOk = activeTag === "all" || product.tag === activeTag;
@@ -370,7 +380,9 @@
       buildSectionTiles();
 
       const genericWa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola! Quería consultar por el catálogo de Del Valle Vapes.")}`;
-      document.getElementById("footerWhatsapp").href = genericWa;
+      const footerLink = document.getElementById("footerWhatsapp");
+      footerLink.href = genericWa;
+      footerLink.textContent = formatWaDisplay(WHATSAPP_NUMBER);
       document.getElementById("whatsappFab").href = genericWa;
     } catch (err) {
       console.error("Error cargando el catálogo:", err);
