@@ -71,6 +71,17 @@ input, select, button{ font-family: inherit; }
 .a-hint{ font-size:.78rem; color: var(--text-faint); line-height:1.5; margin-top:1rem; }
 #unlockForm .a-btn{ margin-bottom:.6rem; }
 
+.a-divider{ display:flex; align-items:center; gap:.75rem; margin:1.25rem 0; color: var(--text-faint); font-size:.8rem; }
+.a-divider::before, .a-divider::after{ content:""; flex:1; height:1px; background: var(--border); }
+
+#importBox{ margin-top:1rem; }
+textarea{
+  width:100%; background: var(--surface-2); border:1px solid var(--border); color: var(--text);
+  padding:.65rem .8rem; border-radius:8px; font-size:.82rem; font-family: var(--font-mono);
+  resize: vertical;
+}
+textarea:focus{ outline:2px solid var(--frost-cyan); outline-offset:1px; }
+
 /* ===== Status bar ===== */
 .a-status{
   max-width:1100px; margin:1rem auto 0; padding:.8rem 1.1rem; border-radius:10px; font-size:.88rem;
