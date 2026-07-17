@@ -364,5 +364,14 @@
     "price": 9500,
     "img": "ebdesign_te6000_ice_mint.png",
     "tag": "te6000"
+  },
+  {
+    "id": "elfbar-duke-35k-blue-razz-ice-35000-ut0f",
+    "brand": "ELFBAR DUKE 35K",
+    "flavor": "Blue Razz Ice 35000",
+    "price": 23000,
+    "puffs": "35.000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-duke-35k_blue-razz-ice-35000.webp"
   }
 ]
