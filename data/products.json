@@ -409,5 +409,14 @@
     "puffs": "35.000",
     "tag": "elfbar-te30k",
     "img": "elfbar-duke-35k_kiwi-passion-fruit-guavo.jpg"
+  },
+  {
+    "id": "elfbar-duke-35k-watermelon-ice-tg6q",
+    "brand": "ELFBAR DUKE 35K",
+    "flavor": "WATERMELON ICE",
+    "price": 23000,
+    "puffs": "35.000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-duke-35k_watermelon-ice.jpg"
   }
 ]
