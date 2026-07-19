@@ -1,32 +1,5 @@
 [
   {
-    "id": "te30k-strawmelon-peach",
-    "brand": "Elfbar TE30K",
-    "flavor": "Strawmelon Peach",
-    "price": 21500,
-    "puffs": "30.000",
-    "img": "elfbar_te30k_strawmelon_peach.png",
-    "tag": "elfbar-te30k"
-  },
-  {
-    "id": "te30k-miami-mint",
-    "brand": "Elfbar TE30K",
-    "flavor": "Miami Mint",
-    "price": 21500,
-    "puffs": "30.000",
-    "img": "elfbar_te30k_miami_mint.png",
-    "tag": "elfbar-te30k"
-  },
-  {
-    "id": "te30k-acai-banana-ice",
-    "brand": "Elfbar TE30K",
-    "flavor": "Acai Banana Ice",
-    "price": 21500,
-    "puffs": "30.000",
-    "img": "elfbar_te30k_acai_banana_ice.png",
-    "tag": "elfbar-te30k"
-  },
-  {
     "id": "mix-passionfruit-pineapple",
     "brand": "Ignite Mix",
     "flavor": "Passion Fruit Sour Kiwi / Pineapple Ice",
@@ -507,7 +480,7 @@
     "flavor": "BUBBALOO TUTTI FRUTTI",
     "price": 24000,
     "puffs": "40000",
-    "tag": "elfbar-te30k",
+    "tag": "elfbar-iceking",
     "img": "elfbar-sweet-king-40k_bubbaloo-tutti-frutti.jpg"
   },
   {
@@ -599,5 +572,50 @@
     "puffs": "40000",
     "tag": "elfbar-iceking",
     "img": "elfbar-ice-king-40k_baja-splash.jfif"
+  },
+  {
+    "id": "elfbar-te-30k-strawberry-watermelon-pobb",
+    "brand": "ELFBAR TE 30K",
+    "flavor": "STRAWBERRY WATERMELON",
+    "price": 22500,
+    "puffs": "30000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-te-30k_strawberry-watermelon.jfif"
+  },
+  {
+    "id": "elfbar-te-30k-watermelon-yo5v",
+    "brand": "ELFBAR TE 30K",
+    "flavor": "WATERMELON",
+    "price": 22500,
+    "puffs": "30000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-te-30k_watermelon.jfif"
+  },
+  {
+    "id": "elfbar-te-30k-blueberry-gj7d",
+    "brand": "ELFBAR TE 30K",
+    "flavor": "BLUEBERRY",
+    "price": 22500,
+    "puffs": "30000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-te-30k_blueberry.jfif"
+  },
+  {
+    "id": "elfbar-te-30k-peach-mango-watermelon-u90m",
+    "brand": "ELFBAR TE 30K",
+    "flavor": "PEACH MANGO WATERMELON",
+    "price": 22500,
+    "puffs": "30000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-te-30k_peach-mango-watermelon.jfif"
+  },
+  {
+    "id": "elfbar-te-30k-bubbalo-tutti-frutti-krdu",
+    "brand": "ELFBAR TE 30K",
+    "flavor": "BUBBALO TUTTI FRUTTI",
+    "price": 22500,
+    "puffs": "30000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-te-30k_bubbalo-tutti-frutti.jfif"
   }
 ]
