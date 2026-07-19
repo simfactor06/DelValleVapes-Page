@@ -241,15 +241,6 @@
     "tag": "lostmary"
   },
   {
-    "id": "iceking-grape-ice",
-    "brand": "Elfbar Ice King",
-    "flavor": "Grape Ice",
-    "price": 24000,
-    "puffs": "40.000",
-    "img": "elfbariceking_grape_ice.png",
-    "tag": "elfbar-iceking"
-  },
-  {
     "id": "iceking-cherry-strazz",
     "brand": "Elfbar Ice King",
     "flavor": "Cherry Strazz",
@@ -266,24 +257,6 @@
     "puffs": "40.000",
     "img": "elfbar-ice-king_strawberry-ice.jfif",
     "tag": "elfbar-iceking"
-  },
-  {
-    "id": "iceking-miami-mint",
-    "brand": "Elfbar Ice King",
-    "flavor": "Miami Mint",
-    "price": 24000,
-    "puffs": "40.000",
-    "img": "elfbariceking_miami_mint.png",
-    "tag": "elfbar-iceking"
-  },
-  {
-    "id": "v300-strawberry-ice",
-    "brand": "Ignite V300 Ultra Slim",
-    "flavor": "Strawberry Ice",
-    "price": 26000,
-    "puffs": "30.000",
-    "img": "ignitev300_strawberry_ice.png",
-    "tag": "ignite"
   },
   {
     "id": "v155-watermelon-mix-negro",
@@ -315,14 +288,6 @@
     "flavor": "Strawberry Ice",
     "price": 20500,
     "img": "ignitev155_strawberry_ice_a.png",
-    "tag": "ignite"
-  },
-  {
-    "id": "v155-strawberry-ice-b",
-    "brand": "Ignite V155 Ultra Slim",
-    "flavor": "Strawberry Ice (variante)",
-    "price": 20500,
-    "img": "ignitev155_strawberry_ice_b.png",
     "tag": "ignite"
   },
   {
