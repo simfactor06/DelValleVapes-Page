@@ -728,5 +728,14 @@
     "puffs": "4000",
     "tag": "ignite",
     "img": "ignite-v40_watermelon.jfif"
+  },
+  {
+    "id": "elf-bar-sweet-king-40k-bubbaloo-grape-hgve",
+    "brand": "ELF BAR SWEET KING 40K",
+    "flavor": "BUBBALOO GRAPE",
+    "price": 24000,
+    "puffs": "40000",
+    "tag": "elfbar-iceking",
+    "img": "elf-bar-sweet-king-40k_bubbaloo-grape.jfif"
   }
 ]
