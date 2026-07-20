@@ -737,5 +737,41 @@
     "puffs": "40000",
     "tag": "elfbar-iceking",
     "img": "elf-bar-sweet-king-40k_bubbaloo-grape.jfif"
+  },
+  {
+    "id": "elf-bar-sweet-king-40k-lemon-heads-ge2b",
+    "brand": "ELF BAR SWEET KING 40K",
+    "flavor": "LEMON HEADS",
+    "price": 24000,
+    "puffs": "40000",
+    "tag": "elfbar-iceking",
+    "img": "elf-bar-sweet-king-40k_lemon-heads.jfif"
+  },
+  {
+    "id": "elf-bar-sweet-king-40k-raspberry-orange-xqa2",
+    "brand": "ELF BAR SWEET KING 40K",
+    "flavor": "RASPBERRY ORANGE",
+    "price": 24000,
+    "puffs": "40000",
+    "tag": "elfbar-iceking",
+    "img": "elf-bar-sweet-king-40k_raspberry-orange.jfif"
+  },
+  {
+    "id": "elf-bar-sweet-king-40k-watermelon-roll-up-xrq9",
+    "brand": "ELF BAR SWEET KING 40K",
+    "flavor": "WATERMELON ROLL UP",
+    "price": 24000,
+    "puffs": "40000",
+    "tag": "elfbar-iceking",
+    "img": "elf-bar-sweet-king-40k_watermelon-roll-up.jfif"
+  },
+  {
+    "id": "elf-bar-sweet-king-40k-wintergreen-savers-z0n0",
+    "brand": "ELF BAR SWEET KING 40K",
+    "flavor": "WINTERGREEN SAVERS",
+    "price": 24000,
+    "puffs": "40000",
+    "tag": "elfbar-iceking",
+    "img": "elf-bar-sweet-king-40k_wintergreen-savers.jfif"
   }
 ]
