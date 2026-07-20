@@ -371,7 +371,7 @@
   },
   {
     "id": "elfbar-ebcreate-bc-pro-blue-razz-ice-th6o",
-    "brand": "ELFBAR EBCREATE BC PRO",
+    "brand": "ELFBAR BC PRO 40K EBCREATE",
     "flavor": "BLUE RAZZ ICE",
     "price": 27000,
     "puffs": "40.000",
@@ -434,7 +434,7 @@
   },
   {
     "id": "elfbar-pro-40k-ebcreate-bc-pro-pineapple-pomelo-uqov",
-    "brand": "ELFBAR PRO 40K EBCREATE BC PRO",
+    "brand": "ELFBAR BC PRO 40K EBCREATE",
     "flavor": "PINEAPPLE POMELO",
     "price": 27000,
     "puffs": "40000",
@@ -773,5 +773,50 @@
     "puffs": "40000",
     "tag": "elfbar-iceking",
     "img": "elf-bar-sweet-king-40k_wintergreen-savers.jfif"
+  },
+  {
+    "id": "ignite-v400-ice-blue-razz-lemon-t9oi",
+    "brand": "IGNITE V400 ICE",
+    "flavor": "ICE BLUE RAZZ LEMON",
+    "price": 25000,
+    "puffs": "40000",
+    "tag": "ignite",
+    "img": "ignite-v400_ice-blue-razz-lemon.jfif"
+  },
+  {
+    "id": "ignite-v400-ice-strawberry-kiwi-gadm",
+    "brand": "IGNITE V400 ICE",
+    "flavor": "ICE STRAWBERRY KIWI",
+    "price": 25000,
+    "puffs": "40000",
+    "tag": "ignite",
+    "img": "ignite-v400_ice-strawberry-kiwi.jfif"
+  },
+  {
+    "id": "ignite-v400-ice-mint-kr65",
+    "brand": "IGNITE V400 ICE",
+    "flavor": "MINT",
+    "price": 25000,
+    "puffs": "40000",
+    "tag": "ignite",
+    "img": "ignite-v400-ice_mint.jfif"
+  },
+  {
+    "id": "ignite-v400-ice-strawberry-glju",
+    "brand": "IGNITE V400 ICE",
+    "flavor": "STRAWBERRY",
+    "price": 25000,
+    "puffs": "40000",
+    "tag": "ignite",
+    "img": "ignite-v400-ice_strawberry.jfif"
+  },
+  {
+    "id": "ignite-v400-ice-grape-peach-8mow",
+    "brand": "IGNITE V400 ICE",
+    "flavor": "GRAPE PEACH",
+    "price": 25000,
+    "puffs": "40000",
+    "tag": "ignite",
+    "img": "ignite-v400-ice_grape-peach.jfif"
   }
 ]
