@@ -136,57 +136,21 @@
     "tag": "rabbeats"
   },
   {
-    "id": "lostmary-green-apple-ice",
-    "brand": "Lost Mary Dura",
-    "flavor": "Green Apple Ice",
-    "price": 22000,
-    "puffs": "35.000",
-    "img": "lostmary_green_apple_ice.png",
-    "tag": "lostmary"
-  },
-  {
-    "id": "lostmary-strawberry-watermelon",
-    "brand": "Lost Mary Dura",
-    "flavor": "Strawberry Watermelon",
-    "price": 22000,
-    "puffs": "35.000",
-    "img": "lostmary_strawberry_watermelon.png",
-    "tag": "lostmary"
-  },
-  {
-    "id": "lostmary-strawberry-ice",
-    "brand": "Lost Mary Dura",
-    "flavor": "Strawberry Ice",
-    "price": 22000,
-    "puffs": "35.000",
-    "img": "lostmary_strawberry_ice.png",
-    "tag": "lostmary"
-  },
-  {
     "id": "lostmary-grape-ice",
     "brand": "Lost Mary Dura",
     "flavor": "Grape Ice",
-    "price": 22000,
+    "price": 23000,
     "puffs": "35.000",
-    "img": "lostmary_grape_ice.png",
-    "tag": "lostmary"
-  },
-  {
-    "id": "lostmary-watermelon-ice",
-    "brand": "Lost Mary Dura",
-    "flavor": "Watermelon Ice",
-    "price": 22000,
-    "puffs": "35.000",
-    "img": "lostmary_watermelon_ice.png",
+    "img": "lost-mary-dura_grape-ice.jfif",
     "tag": "lostmary"
   },
   {
     "id": "lostmary-miami-mint",
     "brand": "Lost Mary Dura",
     "flavor": "Miami Mint",
-    "price": 22000,
+    "price": 23000,
     "puffs": "35.000",
-    "img": "lostmary_miami_mint.png",
+    "img": "lost-mary-dura_miami-mint.jfif",
     "tag": "lostmary"
   },
   {
@@ -206,14 +170,6 @@
     "puffs": "40.000",
     "img": "elfbar-ice-king_strawberry-ice.jfif",
     "tag": "elfbar-iceking"
-  },
-  {
-    "id": "v155-watermelon-mix-negro",
-    "brand": "Ignite V155 Ultra Slim",
-    "flavor": "Watermelon Mix (negro)",
-    "price": 20500,
-    "img": "ignitev155_watermelon_mix_negro.png",
-    "tag": "ignite"
   },
   {
     "id": "v155-watermelon-mix-naranja",
@@ -243,17 +199,19 @@
     "id": "te6000-blue-razz-ice",
     "brand": "TE6000",
     "flavor": "Blue Razz Ice",
-    "price": 9500,
-    "img": "te6000_blue_razz_ice.png",
-    "tag": "te6000"
+    "price": 10000,
+    "img": "te6000_blue-razz-ice.jfif",
+    "tag": "te6000",
+    "puffs": "6000"
   },
   {
     "id": "ebdesign-te6000-ice-mint",
     "brand": "EBDesign TE6000",
     "flavor": "Ice Mint",
-    "price": 9500,
-    "img": "ebdesign_te6000_ice_mint.png",
-    "tag": "te6000"
+    "price": 10000,
+    "img": "ebdesign-te6000_ice-mint.jfif",
+    "tag": "te6000",
+    "puffs": "6000"
   },
   {
     "id": "elfbar-duke-35k-blue-razz-ice-35000-ut0f",
@@ -262,7 +220,7 @@
     "price": 23000,
     "puffs": "35.000",
     "tag": "elfbar-te30k",
-    "img": "elfbar-duke-35k_blue-razz-ice-35000.webp"
+    "img": "elfbar-duke-35k_blue-razz-ice-35000.jfif"
   },
   {
     "id": "elfbar-duke-35k-strawberry-kiwi-ice-cqsf",
@@ -280,7 +238,7 @@
     "price": 23000,
     "puffs": "35.000",
     "tag": "elfbar-te30k",
-    "img": "elfbar-duke-35k_peach-mango-watermelon.jpg"
+    "img": "elfbar-duke-35k_peach-mango-watermelon.webp"
   },
   {
     "id": "elfbar-duke-35k-mango-magico-dlx9",
@@ -289,7 +247,7 @@
     "price": 23000,
     "puffs": "35.000",
     "tag": "elfbar-te30k",
-    "img": "elfbar-duke-35k_mango-magico.jpg"
+    "img": "elfbar-duke-35k_mango-magico.webp"
   },
   {
     "id": "elfbar-duke-35k-kiwi-passion-fruit-guavo-v6q1",
@@ -938,5 +896,14 @@
     "puffs": "5000",
     "tag": "te6000",
     "img": "elfbar-bc-5k_sour-grape-chew.jfif"
+  },
+  {
+    "id": "elfbar-te-30k-acai-banana-ice-85kh",
+    "brand": "ELFBAR TE 30K",
+    "flavor": "ACAI BANANA ICE",
+    "price": 22500,
+    "puffs": "30000",
+    "tag": "elfbar-te30k",
+    "img": "elfbar-te-30k_acai-banana-ice.jfif"
   }
 ]
