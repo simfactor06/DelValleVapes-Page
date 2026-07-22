@@ -34,5 +34,17 @@
     "label": "TE6000 / EBDesign",
     "sub": "6.000 puffs",
     "img": "te6000.jpg"
+  },
+  {
+    "tag": "elfbar-duke",
+    "label": "Elfbar Duke",
+    "sub": "35.000 puffs",
+    "img": "elfbar-duke.jpg"
+  },
+  {
+    "tag": "ebcreate",
+    "label": "EBCreate BC Pro",
+    "sub": "40.000 puffs",
+    "img": "ebcreate.jpg"
   }
 ]
