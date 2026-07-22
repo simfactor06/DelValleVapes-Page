@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Del Valle Vapes</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="a-topbar">
+  <div class="a-topbar__inner">
+    <a href="../index.html" class="a-brand">
+      <img src="../assets/brand/logo.png" alt="" class="a-brand__logo">
+      <span>Del Valle Vapes <em>· Admin</em></span>
+    </a>
+    <div class="a-topbar__actions" id="topbarActions" hidden>
+      <span class="a-repo-tag" id="repoTag"></span>
+      <button class="a-btn a-btn--ghost a-btn--sm" id="lockBtn">Bloquear</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== UNLOCK / SETUP SCREEN ===================== -->
+<main class="a-gate" id="gateScreen">
+  <div class="a-gate__card">
+
+    <div id="setupForm">
+      <h1>Configurar el panel</h1>
+      <p class="a-muted">Esto se hace una sola vez por dispositivo. Necesitás un <strong>Personal Access Token</strong> de GitHub con permiso sobre este repositorio.</p>
+
+      <label class="a-field">
+        <span>Usuario/organización de GitHub</span>
+        <input type="text" id="setupOwner" placeholder="ej: simonrivas">
+      </label>
+      <label class="a-field">
+        <span>Nombre del repositorio</span>
+        <input type="text" id="setupRepo" placeholder="ej: delvallevapes">
+      </label>
+      <label class="a-field">
+        <span>Rama</span>
+        <input type="text" id="setupBranch" placeholder="main" value="main">
+      </label>
+      <label class="a-field">
+        <span>Personal Access Token de GitHub</span>
+        <input type="password" id="setupToken" placeholder="ghp_...">
+      </label>
+      <label class="a-field">
+        <span>Clave para proteger este panel en este dispositivo</span>
+        <input type="password" id="setupPass" placeholder="Elegí una clave que vas a recordar">
+      </label>
+      <label class="a-field">
+        <span>Repetí la clave</span>
+        <input type="password" id="setupPass2" placeholder="Repetí la clave">
+      </label>
+
+      <p class="a-error" id="setupError" hidden></p>
+      <button class="a-btn a-btn--primary a-btn--block" id="setupSubmit">Guardar y entrar</button>
+      <p class="a-hint">
+        ¿No sabés cómo generar el token? Entrá a GitHub → Settings → Developer settings → Personal access tokens →
+        Fine-grained tokens → dale acceso de lectura/escritura ("Contents") solo a este repositorio.
+      </p>
+    </div>
+
+    <div id="unlockForm" hidden>
+      <h1>Panel de administración</h1>
+      <p class="a-muted">Ingresá tu clave para desbloquear.</p>
+      <label class="a-field">
+        <span>Clave</span>
+        <input type="password" id="unlockPass" placeholder="Tu clave">
+      </label>
+      <p class="a-error" id="unlockError" hidden></p>
+      <button class="a-btn a-btn--primary a-btn--block" id="unlockSubmit">Desbloquear</button>
+      <button class="a-btn a-btn--ghost a-btn--block" id="resetVaultBtn">Reconfigurar (olvidé la clave)</button>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===================== DASHBOARD ===================== -->
+<main class="a-dash" id="dashScreen" hidden>
+
+  <div class="a-status" id="statusBar" hidden></div>
+
+  <section class="a-toolbar">
+    <div class="a-tabs" id="tabs">
+      <button class="a-tab active" data-tab="products">Productos</button>
+      <button class="a-tab" data-tab="sections">Secciones</button>
+    </div>
+    <button class="a-btn a-btn--primary" id="saveBtn">💾 Publicar cambios</button>
+  </section>
+
+  <!-- PRODUCTS TAB -->
+  <section class="a-panel" id="tabProducts">
+    <div class="a-panel__header">
+      <input type="search" id="productSearch" placeholder="Buscar por marca o sabor…" class="a-search">
+      <button class="a-btn a-btn--secondary" id="addProductBtn">+ Nuevo producto</button>
+    </div>
+    <div class="a-table" id="productsTable"></div>
+  </section>
+
+  <!-- SECTIONS TAB -->
+  <section class="a-panel" id="tabSections" hidden>
+    <p class="a-muted">Estas son las tiles que se ven en la pantalla de inicio. El "tag" tiene que coincidir con el de los productos de esa línea.</p>
+    <div class="a-table" id="sectionsTable"></div>
+  </section>
+
+</main>
+
+<!-- ===================== PRODUCT EDIT MODAL ===================== -->
+<div class="a-modal-overlay" id="productModalOverlay" hidden></div>
+<div class="a-modal" id="productModal" hidden>
+  <div class="a-modal__header">
+    <h2 id="productModalTitle">Editar producto</h2>
+    <button class="a-modal__close" id="productModalClose">✕</button>
+  </div>
+  <div class="a-modal__body">
+    <input type="hidden" id="pId">
+    <label class="a-field"><span>Marca / línea (texto visible)</span><input type="text" id="pBrand"></label>
+    <label class="a-field"><span>Sabor</span><input type="text" id="pFlavor"></label>
+    <div class="a-field-row">
+      <label class="a-field"><span>Precio (ARS)</span><input type="number" id="pPrice" step="50"></label>
+      <label class="a-field"><span>Puffs (opcional)</span><input type="text" id="pPuffs" placeholder="ej: 30.000"></label>
+    </div>
+    <label class="a-field">
+      <span>Sección / tag</span>
+      <select id="pTag"></select>
+    </label>
+    <label class="a-field">
+      <span>Foto del producto</span>
+      <input type="file" id="pImageFile" accept="image/*">
+    </label>
+    <div class="a-preview" id="pImagePreview"></div>
+    <p class="a-error" id="productModalError" hidden></p>
+  </div>
+  <div class="a-modal__footer">
+    <button class="a-btn a-btn--danger" id="pDeleteBtn">Eliminar producto</button>
+    <button class="a-btn a-btn--primary" id="pSaveBtn">Guardar en la lista</button>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
